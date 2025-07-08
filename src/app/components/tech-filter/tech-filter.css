@@ -1,0 +1,48 @@
+.tech-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px;
+    scroll-behavior: smooth;
+  }
+  
+  .tech-card {
+    min-width: 320px;
+    max-width: 220px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tech-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .tech-card p {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .tech-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tech-scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .tech-scroll-container::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 4px;
+  }
+  
+  .tech-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #aaaaaa;
+  }
+  

@@ -1,0 +1,80 @@
+.container {
+    background-color: #f8f9fa; /* Light background for readability */
+    border: 1px solid #dee2e6; /* Light border for structure */
+    border-radius: 8px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px; /* Padding inside the container */
+}
+
+h2.text-primary {
+    font-size: 1.75rem; /* Larger heading */
+    font-weight: bold; /* Make heading stand out */
+    color: #0d6efd; /* Bootstrap primary color */
+}
+
+p.text-muted {
+    font-size: 0.9rem; /* Smaller font for metadata */
+    font-style: italic; /* Differentiate the update date */
+}
+
+ul {
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Reset padding */
+}
+
+ul li {
+    margin-bottom: 10px; /* Add space between items */
+    font-size: 1rem; /* Standard readable font size */
+    font-weight: 500; /* Make list text semi-bold */
+}
+
+ul li ul {
+    margin-top: 10px; /* Add space above sub-list */
+    padding-left: 20px; /* Indent sub-list */
+}
+
+ul li ul li {
+    font-size: 0.9rem; /* Slightly smaller sub-item font */
+    color: #495057; /* Subtle color for sub-items */
+}
+
+.text-danger {
+    font-weight: bold; /* Highlight warning text */
+}
+
+.btn {
+    font-size: 1rem; /* Comfortable button text size */
+    padding: 10px 20px; /* More padding for better tap areas */
+    border-radius: 6px; /* Rounded corners for modern look */
+}
+
+.btn-outline-danger {
+    color: #dc3545; /* Danger button outline color */
+    border-color: #dc3545; /* Matching border */
+}
+
+.btn-outline-danger:hover {
+    background-color: #dc3545; /* Change to solid on hover */
+    color: #fff; /* Invert text color on hover */
+}
+
+.btn-primary {
+    background-color: #0d6efd; /* Primary button color */
+    border-color: #0d6efd; /* Matching border */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6; /* Define header */
+}
+
+.modal-body p {
+    font-size: 1rem; /* Consistent font size for modals */
+}
+
+.modal-footer .btn {
+    margin-right: 10px; /* Spacing between buttons */
+}

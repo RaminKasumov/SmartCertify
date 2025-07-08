@@ -1,0 +1,107 @@
+<!-- <div class="user-exams-container">
+    <h1>User Exams</h1>
+    <div class="exam-grid">
+      <div class="exam-card" *ngFor="let exam of userExams">
+        <h3 class="exam-title">{{ exam.title }}</h3>
+        <div class="exam-info">
+          <p><strong>Status:</strong> <span [class]="exam.status | lowercase">{{ exam.status }}</span></p>
+          <p><strong>Started:</strong> {{ exam.startedOn | date: 'short' }}</p>
+          <p><strong>Finished:</strong> 
+            {{ exam.finishedOn ? (exam.finishedOn | date: 'short') : 'In Progress' }}
+          </p>
+        </div>
+        <p class="exam-description">{{ exam.description }}</p>
+        <div class="exam-actions">
+          <button 
+            class="btn resume-btn" 
+            *ngIf="!exam.finishedOn" 
+            (click)="resumeExam(exam.examId)">
+            Resume Exam
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+<!-- 
+   <div class="user-exams-container">
+    <h1>User Exams</h1>
+    <div class="exam-list">
+      <div class="exam-card" *ngFor="let exam of userExams">
+        <div class="exam-details">
+          <h2 class="exam-title">{{ exam.title }}</h2>
+          <p class="exam-description">{{ exam.description }}</p>
+          <div class="exam-info">
+            <span class="exam-status" [class]="exam.status | lowercase">{{ exam.status }}</span>
+            <span><strong>Started:</strong> {{ exam.startedOn | date: 'short' }}</span>
+            <span><strong>Finished:</strong> 
+              {{ exam.finishedOn ? (exam.finishedOn | date: 'short') : 'In Progress' }}
+            </span>
+          </div>
+        </div>
+        <div class="exam-actions">
+          <button 
+            class="btn resume-btn" 
+            *ngIf="!exam.finishedOn" 
+            (click)="resumeExam(exam.examId)">
+            Resume Exam
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+
+   <div class="user-exams-container">
+    <h1>User Exams</h1>
+    <div class="exam-table-container">
+      <table class="exam-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Started On</th>
+            <th>Finished On</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let exam of userExams">
+            <td>{{ exam.title }}</td>
+            <td>{{ exam.description }}</td>
+            <td>
+                <span 
+                  class="status" 
+                  [ngClass]="{
+                    'in-progress': exam.status === 'In Progress',
+                    'completed': exam.status === 'Completed'
+                  }">
+                  {{ exam.status }}
+                </span>
+              </td>
+              
+            <td>{{ exam.startedOn | date: 'MMM d, y'  }}</td>
+            <td>
+              {{ exam.finishedOn ? (exam.finishedOn | date: 'MMM d, y' ) : 'In Progress' }}
+            </td>
+            <td>
+              <button 
+              class="btn view-btn" 
+              *ngIf="exam.finishedOn" 
+              (click)="takeToCompletedExam(exam.examId)">
+              View Details
+            </button>
+              <button 
+                class="btn resume-btn" 
+                *ngIf="!exam.finishedOn" 
+                (click)="resumeExam(exam.examId)">
+                Resume
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

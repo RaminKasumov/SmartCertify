@@ -1,0 +1,125 @@
+/* Container & Card Styling */
+.question-form-container {
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .card {
+    border-radius: 8px;
+  }
+  
+  /* Card Header */
+  .card-header {
+    padding: 16px;
+  }
+  
+  /* Form Row for Top Controls */
+  .form-row.top-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .form-group {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .form-check.inline-check {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  /* Input & Select Styles */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+  }
+  
+  /* Textarea for Question Text */
+  textarea.form-control {
+    resize: vertical;
+    white-space: pre-wrap;
+  }
+  
+  /* Choices Section */
+  .choices-container {
+    margin-top: 20px;
+  }
+  
+  .choice-item {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    margin-bottom: 12px;
+    padding: 10px;
+  }
+  
+  .choice-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .choice-row input[type="text"] {
+    flex: 1;
+  }
+  
+  .btn-danger {
+    padding: 2px 8px;
+  }
+  
+  /* Button Styles */
+  .btn {
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    padding: 8px 16px;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Card Shadow & Hover Effects */
+  .card.shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .choice-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Centered Form Title */
+  .form-title {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 576px) {
+    .question-form-container {
+      padding: 10px;
+    }
+  }
+  

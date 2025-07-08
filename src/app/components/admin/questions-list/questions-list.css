@@ -1,0 +1,29 @@
+.container {
+    /* max-width: 800px; */
+    margin: auto;
+
+  }
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .table th, .table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  button {
+    min-width: 80px;
+  }
+
+  .auto-height{
+    
+       /* Set max height and enable scrolling */
+       max-height: 600px; /* Adjust as needed */
+       overflow-y: auto;
+       padding-right: 8px; /* To avoid text hiding under the scrollbar */
+       display: block; /* Ensures the element respects height and scrolling */
+  }
+  

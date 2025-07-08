@@ -1,0 +1,61 @@
+<div class="container mt-4" *ngIf="examDetails">
+    <div class="card shadow-lg">
+      <div class="card-header bg-dark text-white text-center">
+        <h3>{{ examDetails.title }}</h3>
+        <span [class]="getStatusClass(examDetails.status)" class="mt-2">
+          {{ examDetails.status }}
+        </span>
+      </div>
+      <div class="card-body">
+        <p>
+          <strong>Started On:</strong> {{ examDetails.startedOn | date: 'MMM d, y, h:mm a' }}
+        </p>
+        <p *ngIf="examDetails.finishedOn">
+          <strong>Finished On:</strong> {{ examDetails.finishedOn | date: 'MMM d, y, h:mm a' }}
+        </p>
+        <p *ngIf="!examDetails.finishedOn" class="text-muted">
+          Exam is still in progress.
+        </p>
+      </div>
+    </div>
+  
+    <div *ngIf="showIsCorrectChoice" class="card mt-4 p-3 text-center" [ngClass]="{ 'bg-light': true, 'border-success': isPassed, 'border-danger': !isPassed }">
+      <h4>Your Score: {{ score }}%</h4>
+      <span [class]="'badge ' + (isPassed ? 'bg-success' : 'bg-danger')">
+        {{ isPassed ? 'Passed' : 'Failed' }}
+      </span>
+      <p class="mt-2" *ngIf="isPassed">Great job! Keep up the good work and attempt more tests!</p>
+      <p class="mt-2" *ngIf="!isPassed">Don't worry! Review the material and try again—you've got this!</p>
+    </div>
+  
+    <div class="table-responsive mt-4">
+      <table class="table table-striped">
+        <thead class="table-dark text-center">
+          <tr>
+            <th>#</th>
+            <th>Question</th>
+            <th *ngIf="showIsCorrectChoice">Correct</th>
+            <th>Difficulty</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let question of examDetails.questions; let i = index" class="text-center">
+            <td>{{ i + 1 }}</td>
+            <td class="text-start">{{ question.questionText }}</td>
+            <td *ngIf="showIsCorrectChoice">
+              <span *ngIf="question.isCorrect !== null" [class]="question.isCorrect ? 'text-success' : 'text-danger'">
+                {{ question.isCorrect ? '✔️ Correct' : '❌ Incorrect' }}
+              </span>
+              <span *ngIf="question.isCorrect === null" class="text-muted">Not Answered</span>
+            </td>
+            <td>
+              <span [class]="getDifficultyBadge(question.difficultyLevel)">
+                {{ question.difficultyLevel }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

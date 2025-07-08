@@ -1,0 +1,61 @@
+.video-scroll-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    h3 {
+      margin-bottom: 10px;
+      color: #333;
+      font-size: 18px;
+    }
+  
+    .video-list {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: #aaa #f9f9f9;
+  
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+  
+      &::-webkit-scrollbar-thumb {
+        background: #aaa;
+        border-radius: 10px;
+      }
+  
+      &::-webkit-scrollbar-track {
+        background: #f9f9f9;
+      }
+    }
+  
+    .video-item {
+      flex: 0 0 auto;
+      width: 200px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+  
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        margin-bottom: 8px;
+      }
+  
+      p {
+        font-size: 14px;
+        color: #555;
+        margin: 0;
+      }
+  
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  

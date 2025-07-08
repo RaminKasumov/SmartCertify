@@ -1,0 +1,35 @@
+.user-exams-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .exam-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .exam-table th,
+  .exam-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .exam-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .resume-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .resume-btn:hover {
+    background-color: #45a049;
+  }
+  

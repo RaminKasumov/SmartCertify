@@ -1,0 +1,60 @@
+.container {
+    background-color: #f8f9fa; /* Light background */
+    border: 1px solid #dee2e6; /* Border for structure */
+    border-radius: 8px; /* Rounded edges */
+    padding: 20px; /* Internal spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h2.text-primary {
+    font-size: 1.75rem; /* Larger heading */
+    font-weight: bold; /* Emphasized heading */
+    color: #0d6efd; /* Bootstrap primary color */
+}
+
+ul.list-group {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+ul.list-group-item {
+    border: none; /* Remove border between items */
+    padding: 10px 0; /* Space between items */
+    font-size: 1rem; /* Readable font size */
+}
+
+ul.list-group-item strong {
+    font-weight: 600; /* Emphasize labels */
+}
+
+.image-container {
+    text-align: center;
+    padding: 20px; /* Add space around the image */
+}
+
+.image-container img {
+    max-width: 100%; /* Responsive image */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.btn {
+    padding: 10px 20px; /* Comfortable click area */
+    font-size: 1rem; /* Readable font */
+    border-radius: 6px; /* Rounded button edges */
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Bootstrap secondary color */
+    border-color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #0d6efd; /* Bootstrap primary color */
+    border-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker blue */
+}

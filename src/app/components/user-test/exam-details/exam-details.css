@@ -1,0 +1,58 @@
+.container {
+    max-width: 900px;
+  }
+  
+  .card {
+    border-radius: 12px;
+  }
+  
+  .card-header {
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .table {
+    font-size: 0.9rem;
+  }
+  
+  .table th, 
+  .table td {
+    vertical-align: middle;
+  }
+  
+  .card p {
+    margin: 0;
+  }
+  
+  .card .text-success {
+    font-weight: bold;
+  }
+  
+  .card .text-danger {
+    font-weight: bold;
+  }
+  
+  .card.border-success {
+    border: 2px solid #198754;
+  }
+  
+  .card.border-danger {
+    border: 2px solid #dc3545;
+  }
+  
+  .card .badge.bg-success {
+    background-color: #198754;
+  }
+  
+  .card .badge.bg-danger {
+    background-color: #dc3545;
+  }
+  
+  .text-muted {
+    font-style: italic;
+  }
+  

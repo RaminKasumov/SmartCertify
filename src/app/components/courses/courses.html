@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <h1 class="text-center mb-4 display-4 text-primary">Explore Our Courses</h1>
+    <p class="text-center text-muted mb-4">
+        Discover our comprehensive and engaging courses designed to boost your skills.
+    </p>
+
+    <!-- Technology Filter -->
+    <app-tech-filter [techList]="techData" (filterCourses)="onTechSelected($event)"></app-tech-filter>
+
+    <!-- Test Availability Toggle -->
+    <div class="d-flex justify-content-center align-items-center mt-3 mb-4">
+        <label class="form-check-label me-2" for="toggleTests">Show Available Tests</label>
+        <input type="checkbox" class="form-check-input" id="toggleTests" [(ngModel)]="onlyAvailableTest"
+            (change)="applyFilters()" />
+    </div>
+
+    <!-- Courses List -->
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div *ngFor="let course of filteredCourses" class="col-md-6 col-lg-4 mb-4">
+                <div class="card course-card">
+                    <div class="card-header">
+                        <h5 class="card-title">{{ course.title }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ course.description }}</p>
+                        <br>
+                        <p>There are {{course.questionCount}} questions to evaluate your knowledge.</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-primary" [disabled]="!userId || !course.questionCount"
+                            (click)="startTest(course.courseId)">
+                            Start a Test
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Courses Message -->
+            <div *ngIf="filteredCourses.length === 0" class="text-center col-md-8 col-lg-8 mb-8">
+                <h2>No courses currently available for the {{ technologySelected }} Technology</h2>
+            </div>
+        </div>
+    </div>
+</div>

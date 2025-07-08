@@ -1,0 +1,6 @@
+<div class="tech-scroll-container">
+    <div class="tech-card" *ngFor="let tech of techList" (click)="selectTechnology(tech.name)">
+        <img [src]="tech.image" [alt]="tech.name" />
+        <p>{{ tech.name }}</p>
+    </div>
+</div>

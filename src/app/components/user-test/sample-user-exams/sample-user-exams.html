@@ -1,0 +1,34 @@
+<div class="user-exams-container">
+    <h1>User Exams</h1>
+    <table class="exam-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Status</th>
+          <th>Started On</th>
+          <th>Finished On</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exam of userExams">
+          <td>{{ exam.title }}</td>
+          <td>{{ exam.status }}</td>
+          <td>{{ exam.startedOn | date: 'medium' }}</td>
+          <td>
+            {{ exam.finishedOn ? (exam.finishedOn | date: 'medium') : 'In Progress' }}
+          </td>
+          <td>
+            <button
+              class="btn resume-btn"
+              *ngIf="!exam.finishedOn"
+              (click)="resumeExam(exam.examId)"
+            >
+              Resume Exam
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

@@ -1,0 +1,101 @@
+<div class="container">
+    <br>
+    <div class="exam-layout">
+        <!-- Left Section (Questions & Answers) -->
+        <div class="exam-container">
+            <div class="exam-header">
+                <div class="exam-header-content text-center">
+                    <h1>Exam in Progress</h1>
+                    <p class="question-progress">
+                        Question {{ currentQuestionIndex + 1 }} of {{ userExamQuestions.length }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Question Section -->
+            <div class="question-section">
+                <p>Question:</p>
+                <div class="question-text">
+
+                    <!-- Display as Code Block if it's a code-based question -->
+                    <pre *ngIf="isCodeQuestion(currentQuestionDetails?.questionText)">
+                        <code [innerHTML]="currentQuestionDetails?.questionText"></code>
+                    </pre>
+
+                    <!-- Display as Regular Text -->
+                    <p *ngIf="!isCodeQuestion(currentQuestionDetails?.questionText)" class="question-text">
+                        {{ currentQuestionDetails?.questionText }}
+                    </p>
+                </div>
+
+
+                <!-- Choices Section -->
+                <div class="choices">
+                    <div class="choice" *ngFor="let choice of currentQuestionDetails?.choices">
+                        <input type="radio" [id]="'choice-' + choice.choiceId" [value]="choice.choiceId"
+                            [(ngModel)]="selectedChoice" name="choices" (change)="updateSelectedChoiceText()" />
+
+                        <!-- Normal Text Choice -->
+                        <label *ngIf="!choice.isCode" [for]="'choice-' + choice.choiceId" class="text-choice">
+                            {{ choice.choiceText }}
+                        </label>
+
+                        <!-- Code Block Choice -->
+                        <pre *ngIf="choice.isCode" class="code-block">
+                            <code [innerHTML]="choice.choiceText"></code>
+                        </pre>
+                    </div>
+                </div>
+                 <!-- Mark for Review -->
+                 <div class="mark-review">
+                    <label>
+                        <input type="checkbox" [(ngModel)]="markForReview" />
+                        Mark for Review
+                    </label>
+                </div>
+            </div>
+
+            <!-- Warning Message -->
+            <div class="warning-message" *ngIf="showWarning">
+                <p class="warning-text">Please make a selection before proceeding to the next question.</p>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="navigation">
+                <button (click)="goToPreviousQuestion()" [disabled]="currentQuestionIndex === 0" class="nav-button">
+                    Previous
+                </button>
+                <button (click)="submitAndNext()" class="nav-button">
+                    Next
+                </button>
+            </div>
+
+            <div class="video-scroll-wrapper" *ngIf="selectedCourse">
+                <app-video-scroll [courseTopic]="selectedCourse.title.split(' ')[0]"></app-video-scroll>
+            </div>
+        </div>
+
+        <!-- Right Section (Question Status) -->
+        <div class="question-status-container">
+            <h3>Question Status</h3>
+            <ul class="status-list">
+                <li *ngFor="let status of questionStatuses; let i = index"
+                    [class.active]="status.questionId === currentQuestionDetails?.questionId">
+                    <div class="status-details">
+                        <span class="question-number">Q{{ i + 1 }}</span>
+                        <span class="status-indicator" [ngClass]="{
+                            'status-answered': status.status === 'Answered',
+                            'status-unanswered': status.status === 'Not Started',
+                            'status-review': checkReviewStatus(status.questionId)
+                        }">
+                            {{ status.status }}
+                        </span>
+                        <span *ngIf="checkReviewStatus(status.questionId)" class="review-label">
+                            <i class="icon-review"></i> Marked for Review
+                        </span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

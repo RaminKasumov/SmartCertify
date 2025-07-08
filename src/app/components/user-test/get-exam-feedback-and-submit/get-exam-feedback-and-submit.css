@@ -1,0 +1,52 @@
+.feedback-container {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.feedback-textarea {
+    width: 100%;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;  /* Centers the image horizontally */
+    align-items: center;      /* Centers the image vertically */
+    width: 100%;
+    max-width: 800px;         /* Limits the image width */
+    margin: 0 auto;
+    padding: 20px;            /* Adds some space around the image */
+}
+
+img {
+    max-width: 100%;   /* Ensures image width does not exceed container's width */
+    height: auto;      /* Keeps aspect ratio intact */
+    border-radius: 8px; /* Optional: adds rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: adds shadow */
+}
+
+/* Button for navigation */
+.button-container {
+    text-align: center;   /* Centers the button below the image */
+    margin-top: 20px;
+}
+
+.button-container .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}

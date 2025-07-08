@@ -1,0 +1,72 @@
+<div class="container mt-5 p-4 rounded shadow-lg bg-light">
+    <div class="row">
+        <!-- Left Column -->
+        <div class="col-md-4 border-end border-secondary">
+            <h2 class="text-primary fw-bold">Exam Candidate Agreement</h2>
+            <p class="text-muted fs-6">Updated January 2025</p>
+        </div>
+
+        <!-- Right Column -->
+        <div class="col-md-8">
+            <p class="fs-5">
+                When you registered for this test, you agreed to adhere to the terms and conditions of the Exam
+                Candidate Agreement. The following rules are specific to this exam:
+            </p>
+            <ul class="list-group mb-4">
+                <li class="list-group-item">
+                    This test is confidential and protected by intellectual property laws.
+                </li>
+                <li class="list-group-item">
+                    You must not participate in any behavior that could compromise the confidentiality or results of
+                    this test.
+                </li>
+                <li class="list-group-item">
+                    Violations include, but are not limited to:
+                    <ul class="list-group mt-2">
+                        <li class="list-group-item">Sharing or capturing exam content or related information.</li>
+                        <li class="list-group-item">Impersonating another individual or misrepresenting your identity.</li>
+                        <li class="list-group-item">Submitting answers or work that are not your own.</li>
+                        <li class="list-group-item">Using unauthorized items during the test, including electronic devices.</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Violating any test policies may result in invalidation of your score or a permanent ban.
+                </li>
+            </ul>
+            <p class="text-danger fw-bold">
+                Please review these terms carefully before proceeding.
+            </p>
+
+            <!-- Buttons -->
+            <div class="d-flex justify-content-end gap-3 mt-4">
+                <button class="btn btn-outline-danger px-4 py-2 fw-bold" (click)="openDisagreeModal(template)">
+                    No, I don't agree
+                </button>
+                <button class="btn btn-primary px-4 py-2 fw-bold" (click)="proceedToNextPage()">
+                    Yes, I agree
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disagree Modal Template -->
+    <ng-template #template>
+        <div class="modal-header">
+            <h4 class="modal-title text-danger">Warning</h4>
+            <button type="button" class="btn-close" aria-label="Close" (click)="modalRef?.hide()"></button>
+        </div>
+        <div class="modal-body">
+            <p>
+                You must agree to the terms to proceed. If you exit, you will not be able to take the test.
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary px-3" (click)="modalRef?.hide()">
+                Cancel
+            </button>
+            <button class="btn btn-danger px-3" (click)="exitApplication()">
+                Exit
+            </button>
+        </div>
+    </ng-template>
+</div>
