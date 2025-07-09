@@ -9,8 +9,7 @@
     "test": "ng test",
     "build-prod": "ng build --configuration=production --output-hashing=all",
     "build-staging": "ng build --configuration=stage --output-hashing=all",
-    "build-qa": "ng build --configuration=qa --output-hashing=all",
-    "deploy": "ng build --configuration=production --base-href=/SmartCertify/ --output-path=docs-temp && cp -r docs-temp/browser/* docs/ && rm -rf docs-temp && touch docs/.nojekyll"
+    "build-qa": "ng build --configuration=qa --output-hashing=all"
   },
   "private": true,
   "dependencies": {
