@@ -31,7 +31,10 @@ jobs:
       run: npm ci
       
     - name: Build Angular app
-      run: npm run deploy
+      run: |
+        ng build --configuration=production --base-href=/SmartCertify/
+        cp -r dist/smartcertify/browser/* docs/
+        touch docs/.nojekyll
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
