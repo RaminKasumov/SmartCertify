@@ -10,7 +10,7 @@
     "build-prod": "ng build --configuration=production --output-hashing=all",
     "build-staging": "ng build --configuration=stage --output-hashing=all",
     "build-qa": "ng build --configuration=qa --output-hashing=all",
-    "deploy": "ng build --configuration=production --output-hashing=all && xcopy dist\\smartcertify\\browser docs /E /Y && echo. > docs\\.nojekyll"
+    "deploy": "ng build --configuration=production --base-href=/SmartCertify/ --output-path=docs && echo. > docs\\.nojekyll"
   },
   "private": true,
   "dependencies": {
